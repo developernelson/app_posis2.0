@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/register.css"/>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>FA & FA Posis 2.0 M.G / Registro</title>
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn animate__faster">
+        <div class="login-container">
+          <div class="register">
+            <h2>Bienvenid@</h2>
+
+            <form action="/auth/register" method="post">
+              <input  name="nombre" type="text" placeholder="Nombre" class="nombre" value="<%= locals.nombre %>">
+              <input  name="correo" type="email" placeholder="Correo" class="correo" value="<%= locals.correo %>">
+              <input  name="contraseña1" type="password" placeholder="Contraseña" class="pass" value="<%= locals.contraseña1 %>">
+              <input  name="contraseña2" type="password" placeholder="Repetir contraseña" class="pass" value="<%= locals.contraseña2 %>">
+              <input type="submit" class="submit" value="REGISTRARSE">
+              <a href="/auth/login">Login</a>
+            </form>
+            <ul>
+              <% if(locals.errors) { %> 
+                  <% for( let i = 0; i < errors.length; i++ ) { %>            
+                    <li class="errors"><%= errors[i].msg%></li>                    
+                    <% } %>    
+              <% } %> 
+            </ul>
+          </div>
+         </div>
+      </div>
+
+      <% if (locals.alert ) { %>
+        <script>                   
+         Swal.fire({
+                title: "El correo ya existe!",
+                icon: "error",
+                });
+        </script>
+        <% } %>
+
+</body>
+</html>
+
+   

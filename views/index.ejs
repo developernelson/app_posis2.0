@@ -1,0 +1,43 @@
+<%- include('partials/head', {title:"FA & FA Posis 2.0 M.G" }) %>
+
+    <body>
+        <div class="container">
+            <!-- menu de navegacion -->
+            <%- include('partials/navbar') %>
+          
+            <!-- animacion de uploading -->
+            <%- include('partials/uploading') %>
+
+              <!-- animacion de update data -->
+              <%- include('partials/update') %>
+
+            <!-- mensajes de informacion -->
+            <%- include('partials/message') %>
+
+        </div>
+        <script type="text/javascript" src="/script/script.js"></script>
+        
+        <% if (locals.alert ) { %>
+        <script>                   
+         
+         Swal.fire({
+                title: "Secuencia enviada!",
+                icon: "success",
+                });
+        </script>
+        <% } %>
+
+        <% if (locals.register ) { %>
+            <script>                   
+              Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Registro correcto!',
+                showConfirmButton: false,
+                timer: 1500
+        })
+            </script>
+            <% } %>
+
+    </body>
+</html>

@@ -1,0 +1,8 @@
+
+  <div class="message <%= 'color-'+locals.msgType %> ">
+    <div>
+        <i class="fa-solid <%= (locals.msgType === 'info') ? 'fa-circle-exclamation' : (locals.msgType === 'success') ? 'fa-circle-check' : (locals.msgType === 'danger') ? 'fa-circle-xmark' : '' %> "></i>
+        <p><%= locals.message %></p>
+    </div>
+    <i id="<%= locals.msgType %>" onclick="handleCloseMessage(this)" class="fa-solid fa-x"></i>
+</div>

@@ -1,0 +1,98 @@
+<%- include('partials/head', {title: "FA & FA Posis 2.0 M.G"}) %>
+
+    <body>
+        <div class="container">
+            <!-- menu de navegacion -->
+            <%- include('partials/navbar') %>
+
+                <!-- animacion de uploading -->
+                <%- include('partials/uploading') %>
+
+                   <!-- animacion de update data -->
+              <%- include('partials/update') %>
+
+                    <div class="container__info stock animate__animated animate__fadeIn animate__faster">
+                        <div class="title">
+                            <h1>Stock</h1>
+                            <hr/>
+                        </div>
+                        <div class="container__info-table">
+                            <div class="div-table resum-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Secuencia</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= stock[0]?.sequenceNumber %>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+                                        <tr>
+                                            <th>stockDate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= stock[0]?.stockDate %>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+                                        <tr>
+                                            <th>Total Articulos</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= stock.length %>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="div-table div-table_header">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Sucursal</th>
+                                            <th>Codigo de producto</th>
+                                            <th>shipToCode</th>
+                                            <th>Cantidad de atados</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for( let i = 0; i < stock.length; i++ ) { %>
+                                            <tr>
+                                                <td>
+                                                    <%= stock[i].branchCode %>
+                                                </td>
+                                                <td>
+                                                    <%= stock[i].product %>
+                                                </td>
+                                                <td>
+                                                    <%= stock[i].shipToCode %>
+                                                </td>
+                                                <td>
+                                                    <%= stock[i].quantityOfPacks %>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <script type="text/javascript" src="/script/script.js"></script>
+     
+    </body>
+
+    </html>

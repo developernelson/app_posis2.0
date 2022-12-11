@@ -1,0 +1,45 @@
+<%- include('partials/head', {title: "FA & FA Posis 2.0 Victoria"}) %>
+
+<body>
+    <div class="container">
+        <!-- menu de navegacion -->
+        <%- include('partials/navbar') %>
+
+        <!-- animacion de uploading -->
+        <%- include('partials/uploading') %>
+        
+             <!-- animacion de update data -->
+             <%- include('partials/update') %>
+
+        <div class="container__info stock animate__animated animate__fadeIn animate__faster">
+            <div class = "title">
+                <h1>Descargas</h1>
+                <hr/>
+                <div class="div-secuencia">
+                    <label>Ingrese N° de secuencia</label>
+                    <input 
+                        type="number" 
+                        class="input-secuencia"
+                        onkeypress="enterPress(event)"
+                    >
+                    <button 
+                    	class="btn-secuencia" 
+                        type="button" 
+                        onclick="getFile()"
+                        >
+                            Descargar
+                    </button>
+                  </div>
+                  <p class="mensaje-secuencia mensaje-none">Mensaje</p>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="/script/script.js"></script>
+
+</body>
+</html>
+
+
+
+

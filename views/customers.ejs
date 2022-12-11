@@ -1,0 +1,148 @@
+<%- include('partials/head', {title: "FA & FA Posis 2.0 M.G"}) %>
+
+    <body>
+        <div class="container">
+            <!-- menu de navegacion -->
+            <%- include('partials/navbar') %>
+
+                <!-- animacion de uploading -->
+                <%- include('partials/uploading') %>
+
+                   <!-- animacion de update data -->
+              <%- include('partials/update') %>
+
+                    <div class="container__info clientes animate__animated animate__fadeIn animate__faster">
+                        <div class="title">
+                            <h1>Clientes</h1>
+                            <hr/>
+                        </div>
+
+                        <div class="container__info-table">
+                            <div class="div-table resum-table">
+                                <table>
+
+                                    <thead>
+                                        <tr>
+                                            <th>Secuencia</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= locals.num_secuencia%>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+                                        <tr>
+                                            <th>Movimiento "A"</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= customers.filter(cutomer => cutomer.movementCode === "A").length%>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+                                        <tr>
+                                            <th>Movimiento "B"</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= customers.filter(cutomer => cutomer.movementCode === "B").length%>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+                                        <tr>
+                                            <th>Movimiento "M"</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= customers.filter(cutomer => cutomer.movementCode === "M").length%>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <thead>
+                                        <tr>
+                                            <th>Total Clientes</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <%= customers.length%>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="div-table div-table_header">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>POSCode</th>
+                                            <th>Movimiento</th>
+                                            <th>Razon Social</th>
+                                            <th>Calle</th>
+                                            <th>Ciudad</th>
+                                            <th>Distrito</th>
+                                            <th>Codigo Postal</th>
+                                            <th>Frecuencia</th>
+                                            <th>Coordenada "X"</th>
+                                            <th>Coordenada "Y"</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% for( let i = 0; i < customers.length; i++ ) { %>
+                                            <tr>
+                                                <td>
+                                                    <%= customers[i].POSCode %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].movementCode %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].legalName %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].street %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].city %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].district %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].zipCode %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].visitFrequency %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].XCoordinate %>
+                                                </td>
+                                                <td>
+                                                    <%= customers[i].YCoordinate %>
+                                                </td>
+                                            </tr>
+                                            <% } %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <script type="text/javascript" src="/script/script.js"></script>
+     
+    </body>
+
+    </html>

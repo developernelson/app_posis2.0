@@ -1,0 +1,80 @@
+<aside class="navbar__main ">
+    <div class="navbar__div-logo">
+       <a href="/" title="Home">
+           <img class="navbar__img-logo" src=<%= (locals.empresa == 'Ht_285') ? "../img/logo_Fa&Fa_VI.png" : (locals.empresa == 'Ve_984') ? "../img/logo_Fa&Fa_MG.png" : (locals.empresa == 'Fo_564') && "../img/logo_maxico.png" %>  alt="logo_Fa&Fa" />
+       </a> 
+    </div>
+
+    <div class="navbar__menu" >
+        <div class="navbar__menu-main">
+            <li id="clientes" class=" <%= (locals.customers) && 'active' %>  icons-menu">
+                <a 
+                href="/data/clientes"
+                onclick="handleUpdateData()"
+                >
+                    <i class="fa-solid fa-people-group"></i><span>Clientes</span> 
+                </a>
+            </li>
+            <li id="ventas" class=" <%= (locals.sales) && 'active' %> icons-menu">
+                <a 
+                href="/data/ventas"
+                onclick="handleUpdateData()"
+                >
+                    <i class="fa-solid fa-sack-dollar"></i><span>Ventas</span> 
+                </a>
+            </li>
+            <li id="stock"  class=" <%= (locals.stock) && 'active' %> icons-menu">
+                <a 
+                href="/data/stock"
+                onclick="handleUpdateData()"
+                >
+                    <i class="fa-solid fa-boxes-stacked"></i><span>Stock</span> 
+                </a>
+            </li>
+            <li id="historial" class=" <%= (locals.historial) && 'active' %> icons-menu">
+                <a 
+                href="/data/historial"
+                onclick="handleUpdateData()"
+                >
+                    <i class="fa-solid fa-clipboard-list"></i><span>Historial</span> 
+                </a>
+            </li>
+            <li  title="Descargar una secuencia" id="descargar" class=" <%= (locals.descargar) && 'active' %> icons-menu">
+                <a 
+                href="/data/descargar"
+                onclick="handleUpdateData()"
+                >
+                <i class="fa-solid fa-download"></i><span>Descargas</span> 
+                </a>
+            </li>
+            <li title="Actualizar secuencia" id="actualizar" class=" <%= (locals.actualizar) && 'active' %> icons-menu">
+                <a 
+                href="/data/actualizar"
+                onclick="handleUpdateData()"
+                >
+                    <i class="fa-solid fa-arrows-rotate"></i><span>Actualizar</span> 
+                </a>
+            </li>
+        </div>
+      <div class="navbar__menu-logout">
+          <li 
+              id="btnSendData" 
+              class=" icons-menu-logout"> 
+              <a 
+                href="/data/enviar"
+                onclick="handleSendData()"
+              >
+                  <i class="fa-solid fa-cloud-arrow-up"></i> <span>Enviar datos</span> 
+              </a>
+          </li>
+          <hr/>
+          <li id="logout" class=" icons-menu-logout">
+              <a href="/auth/logout">
+                <i class="fa-sharp fa-solid fa-power-off"></i>
+                  <span>Salir</span> 
+              </a>
+              <em class="display-name">(<%= (locals.displayName) ? displayName : name  %>)</em>  
+          </li>
+      </div>
+    </div>
+</aside>
